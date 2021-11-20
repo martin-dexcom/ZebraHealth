@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ProfileSection: View {
+    var username: String
+    var memberType: String
+    
     var body: some View {
         HStack {
             VStack {
-                Text("Mr. Butter Butterington")
+                Text(username)
                     .bold()
                 HStack {
                     Circle()
                         .foregroundColor(.yellow)
                         .frame(width: 10, height: 10)
-                    Text("Gold Member")
+                    Text("\(memberType) Member")
                 }
             }
             ProfilePicture()
@@ -28,6 +31,6 @@ struct ProfileSection: View {
 
 struct ProfileSection_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSection()
+        ProfileSection(username: "Mr. Butter Butterington", memberType: "Diamond")
     }
 }
