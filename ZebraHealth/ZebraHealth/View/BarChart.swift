@@ -73,25 +73,25 @@ struct BarChart: View {
     }
     
     func normalizedValue(index: Int) -> Double {
-        var allValues: [Double]    {
-            var values = [Double]()
-            for data in data {
-                values.append(data.value)
-            }
-            return values
+        var allValues: [Double] = []
+        allValues = data.map({ element in
+            element.value
+        })
+        
+        guard let maxValue = allValues.max() else {
+            return 1
         }
-        guard let max = allValues.max() else {
-                 return 1
-        }
-        if max != 0 {
-            return Double(data[index].value)/Double(max)
+        
+        if maxValue != 0 {
+            return Double(data[index].value) / maxValue
         } else {
             return 1
         }
     }
     
     func barIsTouched(index: Int) -> Bool {
-        touchLocation > CGFloat(index)/CGFloat(data.count) && touchLocation < CGFloat(index+1)/CGFloat(data.count)
+        touchLocation > CGFloat(index)/CGFloat(data.count) &&
+        touchLocation < CGFloat(index+1)/CGFloat(data.count)
     }
     
     func updateCurrentValue()    {
