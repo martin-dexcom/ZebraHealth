@@ -14,6 +14,12 @@
 		94546F1F2748693D0059D033 /* ZebraHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F1E2748693D0059D033 /* ZebraHealthTests.swift */; };
 		94546F292748693D0059D033 /* ZebraHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F282748693D0059D033 /* ZebraHealthUITests.swift */; };
 		94546F2B2748693D0059D033 /* ZebraHealthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F2A2748693D0059D033 /* ZebraHealthUITestsLaunchTests.swift */; };
+		94546F382748737B0059D033 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F372748737B0059D033 /* BarChart.swift */; };
+		94546F3A274873EF0059D033 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F39274873EF0059D033 /* BarChartCell.swift */; };
+		94546F3C274875570059D033 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F3B274875570059D033 /* ProfilePicture.swift */; };
+		94546F3E2748756C0059D033 /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F3D2748756C0059D033 /* ProfileSection.swift */; };
+		94546F40274875940059D033 /* ActivityDataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F3F274875940059D033 /* ActivityDataset.swift */; };
+		94546F422748759D0059D033 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94546F412748759C0059D033 /* ChartData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		94546F242748693D0059D033 /* ZebraHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZebraHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94546F282748693D0059D033 /* ZebraHealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZebraHealthUITests.swift; sourceTree = "<group>"; };
 		94546F2A2748693D0059D033 /* ZebraHealthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZebraHealthUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		94546F372748737B0059D033 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		94546F39274873EF0059D033 /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		94546F3B274875570059D033 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		94546F3D2748756C0059D033 /* ProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSection.swift; sourceTree = "<group>"; };
+		94546F3F274875940059D033 /* ActivityDataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDataset.swift; sourceTree = "<group>"; };
+		94546F412748759C0059D033 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,12 @@
 				94546F0F274869390059D033 /* ContentView.swift */,
 				94546F112748693C0059D033 /* Assets.xcassets */,
 				94546F132748693C0059D033 /* Preview Content */,
+				94546F372748737B0059D033 /* BarChart.swift */,
+				94546F39274873EF0059D033 /* BarChartCell.swift */,
+				94546F3B274875570059D033 /* ProfilePicture.swift */,
+				94546F3D2748756C0059D033 /* ProfileSection.swift */,
+				94546F3F274875940059D033 /* ActivityDataset.swift */,
+				94546F412748759C0059D033 /* ChartData.swift */,
 			);
 			path = ZebraHealth;
 			sourceTree = "<group>";
@@ -257,7 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94546F3A274873EF0059D033 /* BarChartCell.swift in Sources */,
+				94546F3E2748756C0059D033 /* ProfileSection.swift in Sources */,
+				94546F40274875940059D033 /* ActivityDataset.swift in Sources */,
 				94546F10274869390059D033 /* ContentView.swift in Sources */,
+				94546F3C274875570059D033 /* ProfilePicture.swift in Sources */,
+				94546F382748737B0059D033 /* BarChart.swift in Sources */,
+				94546F422748759D0059D033 /* ChartData.swift in Sources */,
 				94546F0E274869390059D033 /* ZebraHealthApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
