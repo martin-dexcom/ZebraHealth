@@ -169,6 +169,7 @@
 		94546F4727487DEE0059D033 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				94546F54274898360059D033 /* UserProfile.swift */,
 				94546F412748759C0059D033 /* ChartData.swift */,
 			);
 			path = Models;
@@ -187,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				94546F3F274875940059D033 /* ActivityDataset.swift */,
-				94546F54274898360059D033 /* UserProfile.swift */,
 			);
 			path = "Mock Data";
 			sourceTree = "<group>";
