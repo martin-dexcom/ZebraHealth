@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ProfilePicture: View {
+    var profilePicture: String
+    var borderColor: Color
+    
     var body: some View {
-        Image("horse")
+        Image(profilePicture)
             .resizable()
             .clipShape(Circle())
             .shadow(radius: 10)
-            .overlay(Circle().stroke(.yellow, lineWidth: 5))
+            .overlay(Circle().stroke(borderColor, lineWidth: 5))
             .accessibilityIdentifier("id_profile_picture")
     }
 }
 struct ProfilePicture_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePicture()
+        ProfilePicture(profilePicture: "horse", borderColor: .yellow)
     }
 }

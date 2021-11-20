@@ -18,13 +18,17 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ProfileSection(username: "Mr. Butter Butterington", memberType: "Gold")
-            BarChart(title: "Daily Activity", legend: "Trots", barColor: .yellow, data: zebraHorseVM.chartData)
+            ProfileSection(profile: zebraHorseVM.mrHorse)
+            BarChart(title: "Daily Activity",
+                     legend: "Trots",
+                     barColor: zebraHorseVM.mrHorse.membershipType.associatedColor,
+                     data: zebraHorseVM.chartData)
                 .padding([.leading, .trailing])
             Button {
                 isSlideOverCardBeingPresented = true
             } label: {
-                AddButton(title: "Add Activity")
+                AddButton(title: "Add Activity",
+                          associatedColor: zebraHorseVM.mrHorse.membershipType.associatedColor)
             }
             .padding()
         }

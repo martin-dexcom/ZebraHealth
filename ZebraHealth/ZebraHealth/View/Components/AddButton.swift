@@ -9,12 +9,13 @@ import SwiftUI
 
 struct AddButton: View {
     var title: String
+    var associatedColor: Color
     
     var body: some View {
         VStack {
             ZStack {
                 Circle()
-                    .foregroundColor(.yellow)
+                    .foregroundColor(associatedColor)
                 Image(systemName: "plus")
                     .resizable()
                     .foregroundColor(.white)
@@ -30,6 +31,6 @@ struct AddButton: View {
 
 struct AddButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddButton(title: "Add")
+        AddButton(title: "Add", associatedColor: .yellow)
     }
 }

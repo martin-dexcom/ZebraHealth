@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct ProfileSection: View {
-    var username: String
-    var memberType: String
+    var profile: UserProfile
     
     var body: some View {
         HStack {
             VStack {
-                Text(username)
+                Text(profile.displayName)
                     .bold()
                     .accessibilityIdentifier("id_profile_section_username_text")
                 HStack {
                     Circle()
-                        .foregroundColor(.yellow)
+                        .foregroundColor(profile.membershipType.associatedColor)
                         .frame(width: 10, height: 10)
                         .accessibilityIdentifier("id_profile_section_member_type_indicator")
-                    Text("\(memberType) Member")
+                    Text("\(profile.membershipType.description) Member")
                         .accessibilityIdentifier("id_profile_section_member_type_text")
                 }
             }
-            ProfilePicture()
+            ProfilePicture(profilePicture: profile.profilePicture, borderColor: profile.membershipType.associatedColor)
                 .frame(width: 100, height: 100, alignment: .leading)
         }
         .accessibilityIdentifier("id_profile_section_view")
@@ -35,6 +34,6 @@ struct ProfileSection: View {
 
 struct ProfileSection_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSection(username: "Mr. Butter Butterington", memberType: "Diamond")
+        ProfileSection(profile: UserProfile(username: "Test", displayName: "Debuggy", profilePicture: "horse", membershipType: .diamond))
     }
 }
