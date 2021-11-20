@@ -35,7 +35,9 @@ struct ContentView: View {
                 Text("New Activity")
                     .font(.largeTitle)
                     .bold()
+                    .accessibilityIdentifier("id_slideover_title_text")
                 TextField("Number of Trots", text: $numberOfTrots)
+                    .accessibilityIdentifier("id_slideover_trots_textfield")
                     .keyboardType(.numberPad)
                     .focused($isTextfieldFocused)
                     .textInputAutocapitalization(.never)
@@ -47,6 +49,7 @@ struct ContentView: View {
                     numberOfTrots = ""
                     isSlideOverCardBeingPresented = false
                 }
+                .accessibilityIdentifier("id_slideover_add_activity_button")
                 .buttonStyle(SOCActionButton())
             }
         }

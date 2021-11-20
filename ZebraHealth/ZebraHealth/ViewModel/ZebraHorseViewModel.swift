@@ -25,7 +25,6 @@ class ZebraHorseViewModel: ObservableObject {
     }
 }
 
-
 extension ZebraHorseViewModel {
     static let shared = ZebraHorseViewModel()
 }

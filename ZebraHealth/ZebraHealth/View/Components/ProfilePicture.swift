@@ -14,6 +14,7 @@ struct ProfilePicture: View {
             .clipShape(Circle())
             .shadow(radius: 10)
             .overlay(Circle().stroke(.yellow, lineWidth: 5))
+            .accessibilityIdentifier("id_profile_picture")
     }
 }
 struct ProfilePicture_Previews: PreviewProvider {

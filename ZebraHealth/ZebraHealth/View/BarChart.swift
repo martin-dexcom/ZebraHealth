@@ -25,6 +25,7 @@ struct BarChart: View {
                 .font(.largeTitle)
             Text("Current value: \(currentValue)")
                 .font(.headline)
+                .accessibility(identifier: "id_barchart_current_value_text")
             GeometryReader { geometry in
                 VStack {
                     HStack {
@@ -57,6 +58,7 @@ struct BarChart: View {
                             .foregroundColor(.black)
                             .padding(5)
                             .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
+                            .accessibility(identifier: "id_barchart_legend_text")
                     } else {
                         Text(currentLabel)
                             .bold()
@@ -65,16 +67,17 @@ struct BarChart: View {
                             .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
                             .offset(x: labelOffset(in: geometry.frame(in: .local).width))
                             .animation(.easeIn)
+                            .accessibility(identifier: "id_barchart_current_label_text")
                     }
                 }
             }
         }
             .padding()
+            .accessibility(identifier: "id_barchart_view")
     }
     
     func normalizedValue(index: Int) -> Double {
-        var allValues: [Double] = []
-        allValues = data.map({ element in
+        let allValues = data.map({ element in
             element.value
         })
         
@@ -117,7 +120,7 @@ struct BarChart: View {
             return 0
         }
         let cellWidth = width / CGFloat(data.count)
-        let actualWidth = width -    cellWidth
+        let actualWidth = width - cellWidth
         let position = cellWidth * CGFloat(currentIndex) - actualWidth/2
         return position
     }
