@@ -129,6 +129,6 @@ struct BarChart: View {
 
 struct BarChart_Previews: PreviewProvider {
     static var previews: some View {
-        BarChart(title: "Preview Title", legend: "legend", barColor: .indigo, data: chartDataSet)
+        BarChart(title: "Preview Title", legend: "legend", barColor: .green, data: chartDataSet)
     }
 }

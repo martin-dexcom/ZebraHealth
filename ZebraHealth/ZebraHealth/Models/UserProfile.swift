@@ -22,7 +22,7 @@ enum MembershipType {
         case .gold:
             return .yellow
         case .diamond:
-            return .indigo
+            return .green
         }
     }
     

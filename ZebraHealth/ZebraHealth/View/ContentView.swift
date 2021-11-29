@@ -10,8 +10,6 @@ import SlideOverCard
 
 struct ContentView: View {
     
-    @FocusState var isTextfieldFocused: Bool
-    
     @State var isSlideOverCardBeingPresented: Bool = false
     @ObservedObject private var zebraHorseVM = ZebraHorseViewModel.shared
     @State var numberOfTrots = ""
@@ -43,13 +41,10 @@ struct ContentView: View {
                 TextField("Number of Trots", text: $numberOfTrots)
                     .accessibilityIdentifier("id_slideover_trots_textfield")
                     .keyboardType(.numberPad)
-                    .focused($isTextfieldFocused)
-                    .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                     .padding()
                 Button("Add") {
                     zebraHorseVM.addToChart(value: numberOfTrots)
-                    isTextfieldFocused = false
                     numberOfTrots = ""
                     isSlideOverCardBeingPresented = false
                 }
