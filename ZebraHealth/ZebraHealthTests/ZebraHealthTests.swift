@@ -18,9 +18,17 @@ class ZebraHealthTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testWhenMaxValueAddedThenBarChartGetsNormalizedValue() {
+        // Arrange
+        let dataset: [ChartData] = [
+            ChartData(label: "Nov 2021", value: 10),
+            ChartData(label: "Dec 2021", value: 15)
+        ]
+        // Act
+        let barchart = BarChart(title: "Test", legend: "An amazingly debug chart", barColor: .green, data: dataset)
+        let normalizedValue = barchart.normalizedValue(index: 1)
+        // Assert
+        XCTAssertEqual(normalizedValue, 1)
     }
 
     func testPerformanceExample() throws {
