@@ -30,11 +30,7 @@ struct BarChart: View {
                 VStack {
                     HStack {
                         ForEach(0..<data.count, id: \.self) { i in
-                            BarChartCell(height: normalizedValue(index: i), barColor: barColor)
-                                .opacity(barIsTouched(index: i) ? 1 : 0.7)
-                                .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
-                                .animation(.spring())
-                                .padding(.top)
+                            BarChartCell(height: data[i].value, barColor: .green)
                         }
                     }
                         .gesture(DragGesture(minimumDistance: 0)
@@ -76,27 +72,19 @@ struct BarChart: View {
             .accessibility(identifier: "id_barchart_view")
     }
     
-    func normalizedValue(index: Int) -> Double {
-        let allValues = data.map({ element in
-            element.value
-        })
-        
-        guard let maxValue = allValues.max() else {
-            return 1
-        }
-        
-        if maxValue != 0 {
-            return Double(data[index].value) / maxValue
-        } else {
-            return 1
-        }
-    }
-    
+    /**
+     Asserts wether a bar was touched or not
+     - Parameter index: The Array index of the bar drawn on screen.
+     */
     func barIsTouched(index: Int) -> Bool {
         touchLocation > CGFloat(index)/CGFloat(data.count) &&
         touchLocation < CGFloat(index+1)/CGFloat(data.count)
     }
     
+    /**
+     Updates the current value on the the UI Labels
+     e.g., if a bar is being touched, display the built in
+     */
     func updateCurrentValue()    {
         let index = Int(touchLocation * CGFloat(data.count))
         guard index < data.count && index >= 0 else {
