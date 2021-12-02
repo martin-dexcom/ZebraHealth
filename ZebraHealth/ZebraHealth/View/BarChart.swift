@@ -30,7 +30,7 @@ struct BarChart: View {
                 VStack {
                     HStack {
                         ForEach(0..<data.count, id: \.self) { i in
-                            BarChartCell(height: data[i].value, barColor: .green)
+                            BarChartCell(height: normalizedValue(index: i), barColor: .green)
                         }
                     }
                         .gesture(DragGesture(minimumDistance: 0)
@@ -70,6 +70,29 @@ struct BarChart: View {
         }
             .padding()
             .accessibility(identifier: "id_barchart_view")
+    }
+    
+    /**
+     Normalizes the value of trots in the ZebraBarChart
+     - parameter index: Array index within the ZebraBarChart
+     - returns: A normalized value.
+     */
+    func normalizedValue(index: Int) -> Double {
+        // Extraemos valor de trotes
+        let allValues = data.map({ element in
+            element.value
+        })
+        
+        // Obtener el valor maximo dentro del arreglo
+        guard let maxValue = allValues.max() else {
+            return 1.0
+        }
+        
+        if maxValue != 0 {
+            return Double(data[index].value) / maxValue
+        } else {
+            return 1.0
+        }
     }
     
     /**
