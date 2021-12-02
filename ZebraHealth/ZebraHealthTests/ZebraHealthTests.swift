@@ -21,15 +21,25 @@ class ZebraHealthTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testWhenIAddMoreDataToBarChartThenDataGetsNormalized() {
-        var dataset: [ChartData] = [
-            ChartData(label: "Dec 2021", value: 500),
-            ChartData(label: "Dec 2022", value: 500), // 1
+
+    func testWhenMaxValueAddedThenBarChartGetsNormalizedValue() {
+        // Arrange
+        let dataset: [ChartData] = [
+            ChartData(label: "Nov 2021", value: 10),
+            ChartData(label: "Dec 2021", value: 15)
         ]
-        let barchart = BarChart(title: "Debug", legend: "This is a demonstration implementation", barColor: .green, data: dataset)
-        // Los datos que ya existen dentro del bar chart los pueda normalizar.
-        let normalizedData = barchart.normalizedValue(index: 1)
-        XCTAssertEqual(normalizedData, 1.0)
+        // Act
+        let barchart = BarChart(title: "Test", legend: "An amazingly debug chart", barColor: .green, data: dataset)
+        let normalizedValue = barchart.normalizedValue(index: 1)
+        // Assert
+        XCTAssertEqual(normalizedValue, 1)
+    }
+
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
     }
 
 }

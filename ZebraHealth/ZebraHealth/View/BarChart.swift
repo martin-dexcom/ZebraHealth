@@ -73,9 +73,12 @@ struct BarChart: View {
     }
     
     /**
-     Normalizes the value of trots in the ZebraBarChart
-     - parameter index: Array index within the ZebraBarChart
-     - returns: A normalized value.
+     Get a normalized value based on the values already present on the data list.
+     - Parameter index: The number to be normalized
+     - Returns the normalized value
+     
+     f.e., In an array of [1,2,3,4,5], a normalized value of 6 would be 1, as it's the maximum value.
+     f.e., In an array of [1,2,3,4,5], a 1 would be 0.2
      */
     func normalizedValue(index: Int) -> Double {
         // Extraemos valor de trotes
