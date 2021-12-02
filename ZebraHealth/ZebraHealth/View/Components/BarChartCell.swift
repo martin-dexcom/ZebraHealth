@@ -20,6 +20,7 @@ struct BarChartCell: View {
 
 struct BarChartCell_Previews: PreviewProvider {
     static var previews: some View {
-        BarChartCell(height: 100, barColor: .blue)
+        BarChartCell(height: 0.5, barColor: .green)
+            .padding()
     }
 }
